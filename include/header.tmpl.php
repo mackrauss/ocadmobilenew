@@ -45,6 +45,8 @@ if (!defined('AT_INCLUDE_PATH')) { exit; }
  * current_top_level_page    string                           full url to the current top level page in "top_leve_pages"
  * current_sub_level_page    string                           full url to the current sub level page in the "sub_level_pages"
  * sub_level_pages           array(array('url', 'title'))     the sub level pages.
+ * is_mobile_device          true or false                    the request is from a mobile device or a desktop device
+ * mobile_device_type        One of the constants: IPOD_DEVICE, BLACKBERRY_DEVICE, ANDROID_DEVICE, UNKNOWN_DEVICE (@see include/lib/constants.inc.php)
  */
 
 // will have to be moved to the header.inc.php
@@ -60,21 +62,15 @@ $capabilities = array("product_info");
 $data_format = TeraWurflRemoteClient::$FORMAT_JSON;
 $wurflObj->getCapabilitiesFromAgent(null, $capabilities, $data_format);
 
-
+// open/close content menu
 $this->onload .= "
 jQuery('#content_link').click(function(e) {
   e.stopPropagation();
   jQuery('#content').slideToggle();";
-
-if (($wurflObj->getDeviceCapability("mobile_browser")=="Safari")) {	
-//	$this->onload .= " setTimeout(loaded, 1000);";
-//	$this->onload .= "document.addEventListener('DOMContentLoaded', loaded, false);";
-}
-
 $this->onload .= "});
 ";
 
-
+// open/close navigational menu 
 $this->onload .= "
 jQuery(document).click(function () {
 jQuery('#topnavlist').hide();}); 
@@ -84,7 +80,7 @@ jQuery('#topnavlist-link').click(function(e) {
 });
 ";
 
-// Armin: add function to hide addressbar on iPhone and Android (not sure how it works on BlackBerry)
+// Hide the addressbar
 $this->onload .= "
 setTimeout(function() { window.scrollTo(0, 1) }, 100);
 ";
@@ -107,24 +103,15 @@ setTimeout(function() { window.scrollTo(0, 1) }, 100);
 	<link rel="stylesheet" href="<?php echo $this->base_path; ?>jscripts/infusion/framework/fss/css/fss-mobile-layout.css" type="text/css"/>
 	<link rel="stylesheet" href="<?php echo $this->base_path; ?>jscripts/infusion/framework/fss/css/fss-mobile-theme-iphone.css" type="text/css"/>	
 	
-<?php if (($wurflObj->getDeviceCapability("mobile_browser")=="Safari")): ?>	
-	<?php $result = "iPhone detection is working!";?>
+
+
+<?php if ($this->is_mobile_device == true): ?>
+	<?php if ($this->mobile_device_type == ANDROID_DEVICE): ?>
+	<link rel="stylesheet" href="<?php echo $this->base_path.'themes/'.$this->theme; ?>/android.css" type="text/css"/>
+	<?php endif; ?>
+	<?php if ($this->mobile_device_type == IPOD_DEVICE): ?>
 	<link rel="stylesheet" href="<?php echo $this->base_path.'themes/'.$this->theme; ?>/iphone.css" type="text/css"/>
-	
-	<script src="<?php echo $this->base_path.'themes/'.$this->theme; ?>/iscroll.js" type="text/javascript"/> 
-<?php endif; ?>
-<?php if (($wurflObj->getDeviceCapability("mobile_browser")=="Android Webkit")): ?>
-	<?php $result = "Android detection is working!";?>
-	<link rel="stylesheet" href="<?php echo $this->base_path.'themes/'.$this->theme; ?>/android.css" type="text/css"/>
-<?php endif; ?>
-<?php if (($wurflObj->getDeviceCapability("mobile_browser")=="BlackBerry")): ?>
-	<?php $result = "Blackberry detection is working!";?>
-	<link rel="stylesheet" href="<?php echo $this->base_path.'themes/'.$this->theme; ?>/blackberry.css" type="text/css"/>
-<?php endif; ?>
-<?php if (($wurflObj->getDeviceCapability("is_wireless_device"))== false): ?>	
-	<?php $result = "Desktop detection is working!";?>
-	
-	<link rel="stylesheet" href="<?php echo $this->base_path.'themes/'.$this->theme; ?>/android.css" type="text/css"/>
+	<?php endif; ?>
 <?php endif; ?>
 
 	<!--[if IE]>
@@ -142,30 +129,8 @@ setTimeout(function() { window.scrollTo(0, 1) }, 100);
 	jQuery.noConflict();
 	//-->
 	</script>
-<?php if (($wurflObj->getDeviceCapability("mobile_browser")=="Safari")): ?>	<!-- 	
-	<script language="javascript" type="text/javascript">
-	var myScroll;
+<?php if (($wurflObj->getDeviceCapability("mobile_browser")=="Safari")): ?>	
 
-	function setHeight() {
-		var headerH = document.getElementById('header').offsetHeight;
-		var footerH = document.getElementById('footer').offsetHeight;
-		var wrapperH = window.innerHeight - headerH - footerH;
-		document.getElementById('wrapper').style.height = wrapperH + 'px';
-	}
-
-	function loaded() {
-		setHeight();
-		myScroll = new iScroll('contentwrapper', {bounce: false, desktopCompatibility: true, checkDOMChanges: true}); 
-		//Desktop debugging note: On Firefox 3 & Safari 5 when desktopCompatibility is set to FALSE on the desktop, the navigation button will not toggle, but the scroll will work
-		//when set to FALSE the navigation button will not toggle, but the scroll won't work	
-	}
-
-	
-	window.addEventListener('onorientationchange' in window ? 'orientationchange' : 'resize', setHeight, false);
-	document.addEventListener('touchmove', function(e){ e.preventDefault(); }, false);
-	document.addEventListener('DOMContentLoaded', loaded, false);
-	
-	</script> -->
 <?php endif; ?>
 	
 <?php echo $this->rtl_css; ?>
@@ -182,12 +147,9 @@ setTimeout(function() { window.scrollTo(0, 1) }, 100);
 <div id="wrapper">
 <div id="main">
 <div id="header">
-	<!-- Note I have REMOVED skip links & access keys from the mobile theme. -->
-	<!-- <a href="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES); ?>#contentwrapper"> </a> -->
-	<!--   <img src="<?php echo $this->base_path; ?>images/clr.gif" height="1" width="1" border="0" alt="<?php echo _AT('goto_content'); ?>"></img></a>		-->
-	<!--   <a href="inner-contentwrapper-skip">Skip to content</a>		-->
-	
-	<!--  take out "go to menu" entirely" 	<a href="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES); ?>#menu<?php echo $_REQUEST['cid']  ?>"  accesskey="m"><img src="<?php echo $this->base_path; ?>images/clr.gif" height="1" width="1" border="0" alt="<?php echo _AT('goto_menu'); ?> ALT+m" /></a> -->
+
+	<a href="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES); ?>#content">
+	<img src="<?php echo $this->base_path; ?>images/clr.gif" height="1" width="1" border="0" alt="<?php echo _AT('goto_content'); ?> ALT+c" /></a>		
 
 	<div id="header-section-title">
 		<!-- <?php if (isset($_SESSION['valid_user']) && $_SESSION['valid_user']): 
@@ -218,9 +180,9 @@ setTimeout(function() { window.scrollTo(0, 1) }, 100);
 					<?php $accesskey_text = ($accesscounter < 10 ? 'accesskey="'.$accesscounter.'"' : ''); ?>
 					<?php $accesskey_title = ($accesscounter < 10 ? ' Alt+'.$accesscounter : ''); ?>
 					<?php if ($page['url'] == $this->current_top_level_page): ?>
-						<li role="menuitem"><a  href="<?php echo $page['url']; ?>" <?php echo $accesskey_text; ?> title="<?php echo $page['title'] . $accesskey_title; ?>" class="flc-screenNavigator-backButton"><?php echo $page['title']; ?></a>  </li>
+						<li role="menuitem"><a  href="<?php echo $page['url']; ?>" <?php echo $accesskey_text; ?> title="<?php echo $page['title'];?>" class="flc-screenNavigator-backButton"><?php echo $page['title']; ?></a>  </li>
 					<?php else: ?>
-						<li role="menuitem"><a  href="<?php echo $page['url']; ?>" <?php echo $accesskey_text; ?> title="<?php echo $page['title'] . $accesskey_title; ?>" class="flc-screenNavigator-backButton"><?php echo $page['title']; ?></a></li>
+						<li role="menuitem"><a  href="<?php echo $page['url']; ?>" <?php echo $accesskey_text; ?> title="<?php echo $page['title']; ?>" class="flc-screenNavigator-backButton"><?php echo $page['title']; ?></a></li>
 					<?php endif; ?>
 				
 					<?php $accesscounter = ($accesscounter == 0 ? 11 : $accesscounter); ?>
@@ -272,7 +234,7 @@ setTimeout(function() { window.scrollTo(0, 1) }, 100);
 		<div class="sequence-links">
 		<?php if ($_SESSION["prefs"]["PREF_SHOW_NEXT_PREVIOUS_BUTTONS"]) { ?>
 			<?php if ($this->sequence_links['resume']): ?>
-					<a href="<?php echo $this->sequence_links['resume']['url']; ?>" class="previous-next" title="<?php echo _AT('resume').': '.$this->sequence_links['resume']['title']; ?>"  /><?php echo $this->sequence_links['resume']['title']; ?></a>
+					<a href="<?php echo $this->sequence_links['resume']['url']; ?>" class="previous-next" title="<?php echo _AT('resume').': '.$this->sequence_links['resume']['title']; ?>"><?php echo $this->sequence_links['resume']['title']; ?></a>
 			<?php else:
 				if ($this->sequence_links['previous']): ?>
 					<a href="<?php echo $this->sequence_links['previous']['url']; ?>" class="previous-next" title="<?php echo _AT('previous_topic').': '. $this->sequence_links['previous']['title']; ?>"> <?php echo _AT('previous_topic').': '. $this->sequence_links['previous']['title']; ?> </a>
@@ -288,7 +250,7 @@ setTimeout(function() { window.scrollTo(0, 1) }, 100);
 
 	<!-- the page title -->
 	<a name="content" title="<?php echo _AT('content'); ?>"></a>
-	<a name="skip-main" title="main content" id="skip-main"><h2 class="page-title"><?php echo $this->page_title; ?></h2></a>
+	<h2 class="page-title"><?php echo $this->page_title; ?></h2>
 	
 	<?php global $msg; $msg->printAll(); $_base_href;?>
 	

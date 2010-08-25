@@ -16,18 +16,18 @@
 /* This is the default configuration file for the default theme. */
 
 /* The theme's name. */
-	$_theme['name'] = 'Mobile 1.6.4';
+	$_theme['name'] = 'AliMobile 2.0';
 
 /* The theme's version number. */
-	$_theme['version'] = '0.4';
+	$_theme['version'] = '1.0';
 
 /* Which version of ATutor is this theme intended for. */
-	$_theme['atutor-version'] = '1.6.4';
+	$_theme['atutor-version'] = '2.0';
 
 /* author information */
 	$_theme['author_name']  = 'Alison Benjamin';
 	$_theme['author_url']   = 'http://atutor.ca';
-	$_theme['author_email'] = '';
+	$_theme['author_email'] = 'alison.benjamin@gmail.com';
 
 /* theme default course banner styles: */
 /*

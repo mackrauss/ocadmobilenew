@@ -1,45 +1,156 @@
-/* Preference Editor tabs */
-/* Preferences tabs */
-.etabbed-list-container	{
-	padding:0;
-	margin: 0;
-	font-size:inherit;
-	width:70%;
-	clear: left;
-	height: 3em;
+/* Style is optimized for Android 2.2, tested on an HTC Dream device. 
+Note that -webkit properties create errors in the CSS validator. 
+Classes beginning with ".fl-" are overriding Mobile FSS, 
+see the API @ http://wiki.fluidproject.org/display/fluid/Mobile+FSS+API 
+for more details. 
+*/
+
+html, body{
+	height: 100%;
+}
+#main{
+	padding-bottom: 
+	2.3em;
+	overflow: auto;
 }
 
-.prefs_buttontab {
+body,ul,li {
 	padding:0;
-	margin: 0;
+	margin:0;
+}
+
+.fl-theme-iphone{
+	background: white;	
+}
+
+#header{
+	width:100%;
+	height:1.063em;
+	line-height:2.813em;
+	padding:0;
+	font-size:1.063em;
+}
+#header-section-title {
+	text-align: center;
+	background-image: -webkit-gradient(linear, left top, left bottom,
+   	from(#4b6b90),
+    color-stop(0.5, #6d8cb3),
+    color-stop(0.50, #4b6b90),
+    color-stop(0.5, #6d8cb3),
+    to(#4b6b90)
+    ); 
+	
+	
+}
+.fl-theme-iphone .fl-navbar{
+	border: none;
+	border-top: none;
+}
+.fl-tabs{
+
+}
+.fl-navbar a{
+	font-size: 0.969em;
+	background-image: -webkit-gradient(linear, left top, left bottom,
+   	from(#4b6b90),
+    color-stop(0.5, #6d8cb3),
+    color-stop(0.50, #4b6b90),
+    color-stop(0.5, #6d8cb3),
+    to(#4b6b90)
+    ); 
+}
+.fl-navbar .fl-tabs {
+	padding-top: .3em;
+	padding-bottom: .3em;
+	border-top: 1px solid black;
+	border-bottom: .5px solid black;
+	background-color: #4b6b90; 
+    height: 2em;   
+}
+
+#navigation-contentwrapper{
+	position: relative;
+	background-color: #4b6b90;
+	height: 2.5em; 
+}
+#navigation-bar{
+ 	height: 2.5em; 
+    border-bottom: .5px solid black;
+    padding-bottom: .3em;
+     
+}
+#wrapper{
+	width:100%;
+	overflow:hidden;
+	overflow: auto;
+	min-height: 100%;
+}
+
+#site-name, h1#section-title{
+	display: inline;
+	text-shadow: none;
+	font-size: 90%;
 	color: #4C566C;
-	white-space: nowrap;
-	background-color: #ffffff;
-	margin-bottom: .5px;
-	border:0;
-	font-weight:500; 
-	text-decoration: underline;
+	color: white;
 }
-.prefs_tab{
-	padding:0.7em 0 0;
-	margin: 0;
-	white-space: nowrap;
-    display: inline;
+/*this CSS creates a button that looks exactlty like a Mobile FSS tab.*/
+.navigation-bar-button{
+    border-width:5px;
+    -webkit-border-radius: 5px;
+	font-size: 18px;/*keep this in px*/
+	padding: 0 .3em;
+	color: white;
+	position: relative;
+	top: .69em; 
+	left: 0.188em; 
+    /* Default mobile fss color scheme for tabs not AA compliant. Here is a compliant bg image: */
+    background-image: -webkit-gradient(linear, left top, left bottom,
+     	from(#3b5371),
+        color-stop(0.5, #374e6b),
+        color-stop(0.50, #354d68),
+        to(#354d68)
+    );
+ 	-webkit-border-image: url(images/navbar_normal_button_insetShadow.png) 5 5 5 5 stretch;
+    -webkit-border-left-image: none;
+    -webkit-background-origin: border;
+    -webkit-background-clip: border;
+    /* To mimick the mobile FSS scolor scheme (iphone) uncomment these lines 
+	background-image: -webkit-gradient(linear, left top, left bottom,
+     	from(#9aafca),
+        color-stop(0.5, #6d8cb3),
+        color-stop(0.50, #4b6b90),
+        to(#4b6b90)
+    );*/
 }
 
-.prefs_tab_selected{  
-	padding:0.9em 0 0;
-	margin: 0;
-	margin: 0px;
-	font-weight:bold;
-	text-align:center;
-	white-space: nowrap;
-    display: inline;
+.fl-theme-iphone .fl-tabs li{
+    /* default mobile fss color scheme for tabs not AA compliant against a white foreground text.therefore its backgroud-image must be overrided */
+    background-image: -webkit-gradient(linear, left top, left bottom,
+     	from(#3b5371),
+        color-stop(0.5, #374e6b),
+        color-stop(0.50, #354d68),
+        to(#354d68)
+    ); 
 }
 
-/* style is optimized for android, tested on an HTC Dream device. not that -webkit properties will create errors in the CSS validator! */
+div#content-link-container{
+	background-color:#F5F5F5;
+	padding:.375em;
+	border: #A9ADB0 solid 1px;
+	-webkit-border-radius: 2px;
+}
+#content_link{
+	display: block;
+}
+#home-guide{
+	position: absolute;
+	top: .45em;
+ 	right: 0.188em; 
+ 	font-size: 17px;/*keep this in px*/
+	white-space:nowrap;
+	display: inline;
 
-
+}
 
 /* main body attributes */
 p {
@@ -105,6 +216,45 @@ h5 {
     font-size: 100%;
 }
 
+
+
+/* Preferences tabs */
+.etabbed-list-container	{
+	padding:0;
+	margin: 0;
+	font-size:inherit;
+	width:70%;
+	clear: left;
+	height: 3em;
+}
+
+.prefs_buttontab {
+	padding:0;
+	margin: 0;
+	color: #4C566C;
+	white-space: nowrap;
+	background-color: #ffffff;
+	margin-bottom: .5px;
+	border:0;
+	font-weight:500; 
+	text-decoration: underline;
+}
+.prefs_tab{
+	padding:0.7em 0 0;
+	margin: 0;
+	white-space: nowrap;
+    display: inline;
+}
+
+.prefs_tab_selected{  
+	padding:0.9em 0 0;
+	margin: 0;
+	margin: 0px;
+	font-weight:bold;
+	text-align:center;
+	white-space: nowrap;
+    display: inline;
+}
 
 
 /*  Table of content attributes*/
@@ -394,13 +544,11 @@ p.search-description {
 	padding: 0.125em;
 }
 
-/***************************** PREFERENCES**********************************/
-
-.content-settings{
+/* preferences */
 .input-form{
 	width: 100%;
 }
-}
+
 .input-form 
 table.tabbed-table {
 	width: 100%;
@@ -458,30 +606,6 @@ table.tabbed-table a, table.tabbed-table a:visited, table.tabbed-table a:hover {
 	color: black;
 	text-decoration: none;
 }
-/* Preferences - divs  
-.etabbed{
-	overflow:auto;
-	}
-.prefs_div_selected{
-	padding: 0.125em;
-	padding-left:0.375em;
-	background-color:#E6E6E6;
-	color: black; 
-	border-top: 1px white solid;
-	background-image: url(images/arrow-open.png);
-	background-repeat:no-repeat;
-	background-position: 297px 0.313em;
-	}
-.prefs_div{
-	padding: 0.125em; 
-	background-color:black;
-	border-top:1px white solid;
-	background-image: url(images/arrow-closed.png);
-	background-repeat:no-repeat;
-	background-position: 300px 0.313em;
-	}
-
-/* End of preferences */
 
 .preference-buttons-container{
 	background-color: red;
@@ -518,7 +642,7 @@ div.preference-buttons-container li{
 }
 #display-settings-preview{
 	width:90%;
-	height:20em	
+	height:20em;
 	margin: 0 auto;
 }
 #feedback{
@@ -1045,7 +1169,7 @@ div.top {
 	padding-top:0.563em; */
 }
 div.tabs {
-	/* Navigational Plone Tabs(tm), implemented by customizing the a tag - they are surprisingly elegant. The power of CSS runs strong in these :) */
+	/* Navigational Plone Tabs */
     background-color: transparent;
 	border-collapse: collapse;
 	border-bottom: 1px solid #B8AE9C;
@@ -1562,10 +1686,9 @@ span.forum-paginator-active{font-weight:700;text-decoration:underline; height:2e
 	padding: 0.125em 0.125em 0.125em  0.938em;
 	margin-bottom: 0.313em; 
 	line-height: 200%; 
-	background-color: #4d4d4d; 
-	border-bottom: 1px solid #efefef; 
-
-	border: 1px solid #eeeeff;}
+	border: solid 1px #A9ADB0;
+	-webkit-border-radius:5px;
+}
 
 li.top-tool a {  font-weight: bold; } /* ol#tools>li>a */ 
 
@@ -1592,20 +1715,6 @@ li.child-tool {
 	font-size: x-small;
 }
 
-/* to modify  tool icons on the course home page */
-/*
-#icon-color-filter{
-	width:3.9em;
-	height:3.85em;
-	background-color:#000000;
-	-moz-opacity:0.5;
-	  filter:alpha(opacity=10);
-	opacity:.10;
-	margin-top:-3.85em;
-	margin-left:1.90em;
-
-}
-*/
 .img-size-home {
 	height:3.85em;
 	width:3.9em;
@@ -1689,10 +1798,6 @@ legend.group_form{
 a:active,a:hover,a:focus{
 	background-color:#F6EAD6;
 	color:#000000;
-	/* for mobile FSS style hovering, use these rules but the fail color contrast
-	color: #fff;
-    background: -webkit-gradient(linear, left top, left bottom, from(#4a94f4), to(#236de5));
-    */
 }
 
 
@@ -1806,11 +1911,13 @@ div.home_box {
 }
 
 .outside_box{
-	margin-left:.4em;
 	background:#e0e0e0;
-	width:28em;
+	width: 17em;
+	margin: .375em;
+	padding: 0;
 	height:9.8em;
 }
+
 
 .inside_box{
 	width:100%;
@@ -1889,171 +1996,8 @@ ul.folder{
 	margin:0em;
 	padding:0em;
 }
- /*  *************************************android stylesheet only************************************ */
-html, body{
-	height: 100%;
-}
-#main{
-	padding-bottom: 
-	2.3em;
-	overflow: auto;
-}
-body{
-/*    padding-bottom:44px;*/
-}
 
-
-body,ul,li {
-	padding:0;
-	margin:0;
-}
-
-.fl-theme-iphone{
-	background: white;	
-}
-
-#header{
-	width:100%;
-	height:1.063em;
-	line-height:2.813em;
-	padding:0;
-	font-size:1.063em;
-}
-#header-section-title {
-	text-align: center;
-	/* 	background-image: -webkit-gradient(linear, left top, left bottom,
-   	from(#354d68),
-    color-stop(0.5, #374e6b),
-    color-stop(0.50, #354d68),
-    color-stop(0.5, #374e6b),
-    to(#354d68)
-    ); */
-	background-image: -webkit-gradient(linear, left top, left bottom,
-   	from(#4b6b90),
-    color-stop(0.5, #6d8cb3),
-    color-stop(0.50, #4b6b90),
-    color-stop(0.5, #6d8cb3),
-    to(#4b6b90)
-    ); 
-	
-	
-}
-.fl-theme-iphone .fl-navbar{
-	border: none;
-	border-top: none;
-}
-.fl-tabs{
-
-}
-.fl-navbar a{
-	font-size: 0.969em;
-	background-image: -webkit-gradient(linear, left top, left bottom,
-   	from(#4b6b90),
-    color-stop(0.5, #6d8cb3),
-    color-stop(0.50, #4b6b90),
-    color-stop(0.5, #6d8cb3),
-    to(#4b6b90)
-    ); 
-}
-.fl-navbar .fl-tabs {
-	padding-top: .3em;
-	padding-bottom: .3em;
-	border-top: 1px solid black;
-	border-bottom: .5px solid black;
-	background-color: #4b6b90; 
-    height: 2em;   
-}
-
-#navigation-contentwrapper{
-	position: relative;
-	background-color: #4b6b90;
-	height: 2.5em; 
-}
-#navigation-bar{
- 	height: 2.5em; 
-    border-bottom: .5px solid black;
-    padding-bottom: .3em;
-     
-}
-#wrapper{
-	width:100%;
-	overflow:hidden;
-	overflow: auto;
-	min-height: 100%;
-	
-	/*
-	height:12.5em;		
-	position:relative;	
-	z-index:1;			
-	width:100%;
-	overflow:hidden;*/
-}
-#site-name, h1#section-title{
-	display: inline;
-	text-shadow: none;
-	font-size: 90%;
-	color: #4C566C;
-	color: white;
-}
-/*this CSS creates a button that looks exactlty like a Mobile FSS tab.*/
-.navigation-bar-button{
-    border-width:5px;
-    -webkit-border-radius: 5px;
-	font-size: 18px;/*keep this in px in order to have similar look to mobile fss which uses px for font size*/
-	padding: 0 .3em;
-	color: white;
-	position: relative;
-	top: .69em; 
-	left: 0.188em; 
-    /* default mobile fss color scheme for tabs not AA compliant. Here is a compliant bg image: */
-    background-image: -webkit-gradient(linear, left top, left bottom,
-     	from(#3b5371),
-        color-stop(0.5, #374e6b),
-        color-stop(0.50, #354d68),
-        to(#354d68)
-    );
- 	-webkit-border-image: url(images/navbar_normal_button_insetShadow.png) 5 5 5 5 stretch;
-    -webkit-border-left-image: none;
-    -webkit-background-origin: border;
-    -webkit-background-clip: border;
-    /* to mimick the mobile FSS scolor scheme (iphone) uncomment these lines 
-	background-image: -webkit-gradient(linear, left top, left bottom,
-     	from(#9aafca),
-        color-stop(0.5, #6d8cb3),
-        color-stop(0.50, #4b6b90),
-        to(#4b6b90)
-    );*/
-}
-
-.fl-theme-iphone .fl-tabs li{
-    /* default mobile fss color scheme for tabs not AA compliant against a white foreground text.therefore its backgroud-image must be overrided */
-    background-image: -webkit-gradient(linear, left top, left bottom,
-     	from(#3b5371),
-        color-stop(0.5, #374e6b),
-        color-stop(0.50, #354d68),
-        to(#354d68)
-    ); 
-}
-
-div#content-link-container{
-	background-color:#F5F5F5;
-	padding:.375em;
-	border: #A9ADB0 solid 1px;
-	-webkit-border-radius: 2px;
-}
-#content_link{
-	display: block;
-}
-#home-guide{
-	position: absolute;
-	top: .45em;
- 	right: 0.188em; 
- 	font-size: 17px;/*keep this in px in order to have similar look to mobile fss which uses px for font size*/
-	white-space:nowrap;
-	display: inline;
-
-}
-/*	*************************************TOPNAVLIST************************************* */
+/*	Top navlist */
 
 #topnavlist-link {
 	color: white;
@@ -2078,7 +2022,7 @@ ul#topnavlist li a.active {
 	font-style: italic;
 	}
 ul#topnavlist li a:hover, ul#topnavlist li a:focus {
-	color: white;
+	color: black;
 }
 
 ul#topnavlist li a  {
@@ -2087,21 +2031,7 @@ ul#topnavlist li a  {
 }
 
 
-/*	*************************************SUB NAVLIST************************************* */
-	
-div#subnavlistcontainer {
-	/*
-	width:95%;
-	margin:auto;
-	*/
-}
-div#subnavbacktopage {
-	/*
-	padding-top:0.313em;
-	padding-left:21.25em;
-	float:left;
-	*/
-}
+/*	Sub naviaation list */
 
 div.toolcontainer{
 	width:90%;
@@ -2126,28 +2056,13 @@ ul#subnavlist li {
 ul#subnavlist li#test{
 	display: none;
 }
-ul#subnavlist li a:hover, ul#subnavlist li a:focus, ul#subnavlist li a.active{ /*
-  	color: black;
-	text-decoration:none;*/
-}
 
-ul#subnavlist li a {/*
-    /* The normal, unselected tabs. They are all links 
-   	color: #555;
-    	height: 1.5em;
-   	text-decoration:underline;
-	background-color:white;
-	font-weight:500;*/
-	color: #4C566C;
-}
-ul#subnavlist li a:visited {
+ul#subnavlist li a, ul#subnavlist li a:visited {
 	color: #4C566C;
 }
 
 
-
-
-/************************************************************** LIST ATTRIBUTES******************************************** */
+/* List attributes */
 ul {
 	list-style: none;
 }
@@ -2163,20 +2078,10 @@ ol#tools>li:hover, ol#tools>li:hover a {
 #subnavigation, #subnavigation a:link, #subnavigation a:visited{
 }
 
-
 #contentwrapper{
 	background-color: white;
 	overflow:auto;
 	padding-bottom: 1em;
-}
-
-#content-contentwrapper{
-
-}
-
-#contentcolumn {
-}
-#contentcolumn_shiftright {
 }
 
 #leftcolumn{
@@ -2185,11 +2090,11 @@ ol#tools>li:hover, ol#tools>li:hover a {
 	margin-left: 0.313em;
 	margin-top:-0.625em;
 }
-#copyright, #top-links{
-}
+
 #copyright{
 	font-size: 0.5em;
 }
+
 #gototop{
 	text-align: center;
 	color: #4B6B90;
@@ -2264,9 +2169,7 @@ div .divider {
 	font-size:.8em;
 }
 
-div.headingbox, h3.headingbox, a.headingbox{
 
-}
 div.contentbox, input-form{
 
 	background-color: #ffffff;
@@ -2295,19 +2198,6 @@ div.social-wrapper{
 	width: 100%;
 }
 
-.network-activity{
-   
-}
-.my-contacts{
-  
-
-.my-network-groups{
-  
-}
-.people-you-may-know{
-
-  
- }
 .contentbox-a{
     width: 100%;
 }
@@ -2320,9 +2210,3 @@ float:left;
 clear:right;
 margin-left:2em;}
 
-
-select.topnavlist-jump{
-}
-body.fl-theme-iphone{
-	margin:10px;
-}
