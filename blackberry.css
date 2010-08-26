@@ -2000,6 +2000,7 @@ ul.folder{
 /*	Top navlist */
 
 #topnavlist-link {
+	/* Armin 26.08.2010 The color was white - now green to see BlackBerry detection working */
 	color: green;
 	text-decoration: none;
 	font-weight: bold;
