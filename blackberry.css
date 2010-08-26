@@ -96,7 +96,6 @@ body,ul,li {
 /*this CSS creates a button that looks exactlty like a Mobile FSS tab.*/
 .navigation-bar-button{
     border-width:5px;
-    -webkit-border-radius: 5px;
 	font-size: 18px;/*keep this in px*/
 	padding: 0 .3em;
 	color: white;
