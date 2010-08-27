@@ -1,5 +1,8 @@
-# Ignore Mac OS X .DS_Store
+# Ignore Mac OS X hidden files
 .DS_Store
+.Spotlight-V100
+.Trashes
+.fseventsd
 
 # Ignore Windows Thumbs.db file
 Thumbs.db
