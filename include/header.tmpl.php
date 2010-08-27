@@ -144,7 +144,17 @@ setTimeout(function() { window.scrollTo(0, 1) }, 100);
 
 <?php echo $this->custom_css; ?>
 </head>
-<body onload="<?php echo $this->onload; ?>" class="fl-theme-iphone">
+<!-- Armin 27.08.2010: If blackberry do not use fl-theme-iphone -->
+<?php if ($this->is_mobile_device == true && $this->mobile_device_type == BLACKBERRY_DEVICE): ?>
+	  <body onload="<?php echo $this->onload; ?>" class="theme-blackberry">
+<!-- Develop: This else if is only for development on Firefox with user mobile - mobile123  -->
+<?php elseif ($this->is_mobile_device == false): ?>
+	  <body onload="<?php echo $this->onload; ?>" class="theme-blackberry">
+<!-- Develop end  -->
+<?php else: ?>
+	  <body onload="<?php echo $this->onload; ?>" class="fl-theme-iphone">
+<?php endif; ?>
+
 
 <div id="wrapper">
 <div id="main">
