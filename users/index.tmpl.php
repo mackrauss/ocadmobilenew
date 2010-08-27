@@ -1,15 +1,26 @@
 <?php require(AT_INCLUDE_PATH.'header.inc.php'); ?>
 
 <div id="my_courses_container">
-<ul class="my-courses-list-ul" style="padding:0">
+	<ul class="my-courses-list-ul" style="padding:0">
 
-<?php foreach ($this->courses as $row):
-	static $counter;
-	$counter++;
-?>
+	<?php
+		foreach ($this->courses as $row):
 
-<li class="my-courses-list">
-  <?php echo '<a href="'.url_rewrite('bounce.php?course=' . $row['course_id']) . '"> '.htmlentities($row['title']).'</a>' ?>
+		// Harris and Armin 19.08.2010: retrieve the top level content page for each course
+		$sql = 'SELECT content_id FROM '.TABLE_PREFIX."content WHERE course_id=$row[course_id] AND content_parent_id=0 AND ordering=1";
+		$result = mysql_query($sql, $db);
+		if ($result){
+			$cp_row = mysql_fetch_assoc($result);
+		}
+		static $counter;
+		$counter++;
+	?>
+
+		<li class="my-courses-list">
+			<!-- Armin: changed call to course and point at first content element to start course right away -->
+			<!-- Harris and Armin 19.08.2010 pointing at first element in the tree now -->
+			<?php echo '<a href="'.url_rewrite('bounce.php?course=' . $row['course_id']).SEP. 'p='.urlencode('content.php?cid='.$cp_row['content_id']) . '"> '.htmlentities($row['title']).'</a>' ?>
+		  
 			<?php if ($row['last_cid']): ?>
 				<a class="my-courses-resume" href="bounce.php?course=<?php echo $row['course_id'].SEP.'p='.urlencode('content.php?cid='.$row['last_cid']); ?>">
 					<img src="<?php echo $_base_href;  ?>themes/default/images/resume.png" border="" alt="<?php echo _AT('resume'); ?>" title="<?php echo _AT('resume'); ?>" />
@@ -36,7 +47,7 @@
 
 <div class="current_box">
 	<div class="current_head">
-		<h3><?php echo _AT('things_current'); ?></h3>
+		<h3><?php echo _AT('Recent activity'); ?></h3>
 	</div>
     <?php 
 				
