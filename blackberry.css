@@ -1,16 +1,14 @@
-/* Style is optimized for Android 2.2, tested on an HTC Dream device. 
-Note that -webkit properties create errors in the CSS validator. 
+/* Style is optimized for iphone. Note that -webkit properties 
+create errors in the CSS validator. 
 Classes beginning with ".fl-" are overriding Mobile FSS, 
 see the API @ http://wiki.fluidproject.org/display/fluid/Mobile+FSS+API 
 for more details. 
 */
-
 html, body{
 	height: 100%;
 }
 #main{
-	padding-bottom: 
-	2.3em;
+	padding-bottom: 2.3em;
 	overflow: auto;
 }
 
@@ -30,55 +28,53 @@ body,ul,li {
 	padding:0;
 	font-size:1.063em;
 }
+
 #header-section-title {
-	text-align: center;
-	background-image: -webkit-gradient(linear, left top, left bottom,
-   	from(#4b6b90),
-    color-stop(0.5, #6d8cb3),
-    color-stop(0.50, #4b6b90),
-    color-stop(0.5, #6d8cb3),
-    to(#4b6b90)
-    ); 
-	
-	
+	text-align: left;
+	background-color:#fff; /*testing - joel*/
+	color:#3866C4 !important;
+	padding-bottom:2px;
 }
+
 .fl-theme-iphone .fl-navbar{
 	border: none;
 	border-top: none;
 }
-.fl-tabs{
 
-}
 .fl-navbar a{
 	font-size: 0.969em;
-	background-image: -webkit-gradient(linear, left top, left bottom,
+	/*background-image: -webkit-gradient(linear, left top, left bottom,
    	from(#4b6b90),
     color-stop(0.5, #6d8cb3),
     color-stop(0.50, #4b6b90),
     color-stop(0.5, #6d8cb3),
     to(#4b6b90)
-    ); 
+    ); */
 }
+
 .fl-navbar .fl-tabs {
 	padding-top: .3em;
 	padding-bottom: .3em;
 	border-top: 1px solid black;
 	border-bottom: .5px solid black;
-	background-color: #4b6b90; 
+	background-color: red; 
     height: 2em;   
 }
 
 #navigation-contentwrapper{
 	position: relative;
-	background-color: #4b6b90;
+	background-color: #F4F4F4;
+	border: 1px solid #999;
 	height: 2.5em; 
 }
+
 #navigation-bar{
  	height: 2.5em; 
     border-bottom: .5px solid black;
     padding-bottom: .3em;
      
 }
+
 #wrapper{
 	width:100%;
 	overflow:hidden;
@@ -88,22 +84,24 @@ body,ul,li {
 
 #site-name, h1#section-title{
 	display: inline;
-	text-shadow: none;
 	font-size: 90%;
-	color: #4C566C;
-	color: white;
+	color: #3866C4;
 }
-/*this CSS creates a button that looks exactlty like a Mobile FSS tab.*/
+
+#site-name {padding-bottom:4px;}
+
+/*this CSS creates a button that looks exactly like a Mobile FSS tab.*/
 .navigation-bar-button{
     border-width:5px;
+   /* -webkit-border-radius: 5px;*/
 	font-size: 18px;/*keep this in px*/
 	padding: 0 .3em;
-	color: white;
+	color: #000;
 	position: relative;
 	top: .69em; 
 	left: 0.188em; 
-    /* Default mobile fss color scheme for tabs not AA compliant. Here is a compliant bg image: */
-    background-image: -webkit-gradient(linear, left top, left bottom,
+    /* default mobile fss color scheme for tabs not AA compliant. Here is a compliant bg image: */
+   /* background-image: -webkit-gradient(linear, left top, left bottom,
      	from(#3b5371),
         color-stop(0.5, #374e6b),
         color-stop(0.50, #354d68),
@@ -113,7 +111,7 @@ body,ul,li {
     -webkit-border-left-image: none;
     -webkit-background-origin: border;
     -webkit-background-clip: border;
-    /* To mimick the mobile FSS scolor scheme (iphone) uncomment these lines 
+    /* to mimick the mobile FSS scolor scheme (iphone) uncomment these lines 
 	background-image: -webkit-gradient(linear, left top, left bottom,
      	from(#9aafca),
         color-stop(0.5, #6d8cb3),
@@ -124,19 +122,19 @@ body,ul,li {
 
 .fl-theme-iphone .fl-tabs li{
     /* default mobile fss color scheme for tabs not AA compliant against a white foreground text.therefore its backgroud-image must be overrided */
-    background-image: -webkit-gradient(linear, left top, left bottom,
+    /*background-image: -webkit-gradient(linear, left top, left bottom,
      	from(#3b5371),
         color-stop(0.5, #374e6b),
         color-stop(0.50, #354d68),
         to(#354d68)
-    ); 
+    ); */
 }
 
 div#content-link-container{
 	background-color:#F5F5F5;
 	padding:.375em;
 	border: #A9ADB0 solid 1px;
-	-webkit-border-radius: 2px;
+	/*-webkit-border-radius: 2px;*/
 }
 #content_link{
 	display: block;
@@ -174,11 +172,11 @@ p a:active {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #4C566C;
-    clear: right;
-    font: 100% Verdana, Helvetica, Arial, sans-serif;
+	color: #333;
+	clear: right;
+	font: 100% Helevetica, Arial, sans-serif;
 	font-weight: bold;
-    margin: 0;
+	margin: 0;
 	padding: 0;
 }
 
@@ -216,12 +214,10 @@ h5 {
 }
 
 
-
 /* Preferences tabs */
 .etabbed-list-container	{
 	padding:0;
 	margin: 0;
-	font-size:inherit;
 	width:70%;
 	clear: left;
 	height: 3em;
@@ -230,23 +226,17 @@ h5 {
 .prefs_buttontab {
 	padding:0;
 	margin: 0;
-	color: #4C566C;
 	white-space: nowrap;
-	background-color: #ffffff;
-	margin-bottom: .5px;
-	border:0;
-	font-weight:500; 
-	text-decoration: underline;
 }
 .prefs_tab{
-	padding:0.7em 0 0;
+	padding:0.5em 0.3em 0;
 	margin: 0;
 	white-space: nowrap;
     display: inline;
 }
 
 .prefs_tab_selected{  
-	padding:0.9em 0 0;
+	padding:0.7em 0.3em 0;
 	margin: 0;
 	margin: 0px;
 	font-weight:bold;
@@ -254,6 +244,7 @@ h5 {
 	white-space: nowrap;
     display: inline;
 }
+
 
 
 /*  Table of content attributes*/
@@ -305,7 +296,7 @@ a.dropdown-title {
 	font-weight: normal;
 	color: black;
 	text-align: center;
-	-webkit-border-radius:3px;
+	/*-webkit-border-radius:3px;*/
 	padding-top: 0.313em;
 	padding-bottom: 0.313em;
 
@@ -465,9 +456,7 @@ td.selected{
 }
 
 
-
 /* the side menu */
-/* the side menu heading */
 td.dropdown-heading {
 	background-color: #DBFDD4;
 	color: #595241;
@@ -543,10 +532,7 @@ p.search-description {
 	padding: 0.125em;
 }
 
-/* preferences */
-.input-form{
-	width: 100%;
-}
+/*preferences*/
 
 .input-form 
 table.tabbed-table {
@@ -606,6 +592,7 @@ table.tabbed-table a, table.tabbed-table a:visited, table.tabbed-table a:hover {
 	text-decoration: none;
 }
 
+
 .preference-buttons-container{
 	background-color: red;
 	height: 2.5em;
@@ -616,6 +603,14 @@ table.tabbed-table a, table.tabbed-table a:visited, table.tabbed-table a:hover {
 div.preference-buttons-container li{
 	display: inline; 
 	float: right;
+}
+
+.prefs_tab_selected{
+	font-style: italic;
+	width: 10%;
+}
+.prefs_tab{
+	width: 10%;
 }
 
 .etabbed-table{
@@ -641,11 +636,12 @@ div.preference-buttons-container li{
 }
 #display-settings-preview{
 	width:90%;
-	height:20em;
+	height:20em; 
 	margin: 0 auto;
 }
 #feedback{
-	width: 90%;
+	width: 100%;
+	padding: 2px;
 }
 #defaultfontsize-wrapper{
 	width:90%; 
@@ -739,7 +735,7 @@ div#top-links {
 #footer{
 	/*width:100%;*/
 	height:2.3em;
-	background-color: #4b6b90;
+	/*background-color: #4b6b90;*/
 	margin-top: -2.3em;
 	position: relative;
 	clear: both;
@@ -748,10 +744,6 @@ div#top-links {
 
 div#top-links a:link, div#top-links a:visited {
 	text-decoration:none;
-}
-div#top-links a:focus{
-	/*color:black;
-	background-color:#F6EAD6;*/
 }
 
 #jumpmenu:focus{
@@ -796,7 +788,7 @@ table.data {
 	padding: 0;
 	color: black;
 	text-align: left;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 	border: #6D7B8D 1px solid;
 
 } 
@@ -925,14 +917,12 @@ div#error {
 	margin-right: auto;
 	margin-top:  0.938em;
 	margin-bottom:  0.938em;
-	border: 1px solid #DD0000;
 	padding: 0.313em;
-	background-color: #F4DCDC;
 	color: #A50707;
-	background-color: #F4DCDC;
+	background-color: #FFFBD9;
 	padding-left: 1.563em;
 	font-weight: bold;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 }
 div#error h4 {
 	color: black;
@@ -958,15 +948,14 @@ div#feedback, div#info {
 	padding-left: 0.313em;
 	padding-right: 0.313em;
 	font-family: Helvetica, Arial, sans-serif;
-	-webkit-border-radius:5px;
-	border: 1px solid #17B506;
-	background-color: #E7EFD0;
-	color: #3f4559;
+	/*-webkit-border-radius:5px;*/
+	background-color: #FFFBD9;
+	color: #333;
 	font-size: 90%;
 	z-index: -1;
 }
 div#feedback li, div#info li, div#error li{
-	color: #4C566C;
+	color: #333;
 	z-index: -1;
 }
 
@@ -981,19 +970,7 @@ div#help {
 	background-color: #E9F4F3;
 	color: #024C41;
 }
-/*
-div#info {
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top:  0.938em;
-	margin-bottom:  0.938em;
-	border: 1px solid #B8AE9C;
-	padding: 0.313em;
-	background-color: #EFE6FF;
-	color: #595241;
-	font-weight: bold;
-} */
+
 
 div#warning {
 	width: 95%;
@@ -1001,9 +978,8 @@ div#warning {
 	margin-right: auto;
 	margin-top:  0.938em;
 	margin-bottom:  0.938em;
-	border: 1px solid #FF8400;
 	padding: 0.313em;
-	background-color: #FFF6ED;
+	background-color: #FFFBD9;
 	color: #D95900;
 	font-weight: bold;
 }
@@ -1101,7 +1077,7 @@ div#content_text {
 }
 /*needs to be set to display: none so drawer can open */
 #content{
-	display: none;
+
 	padding-top:.5em;
 	margin-top: .5em;
 	background-color: #F5F5F5;
@@ -1159,16 +1135,9 @@ div.paging li a:hover, div.paging li a.current {
 	background-repeat: no-repeat;
 	padding:0;
 }
-div.top {
-    /* Top space
-    background-color: #595241;
-	color: #FFF;
-    margin: 0;
-    padding: 0;
-	padding-top:0.563em; */
-}
+
 div.tabs {
-	/* Navigational Plone Tabs */
+	/* Navigational Plone Tabs(tm), implemented by customizing the a tag - they are surprisingly elegant. The power of CSS runs strong in these :) */
     background-color: transparent;
 	border-collapse: collapse;
 	border-bottom: 1px solid #B8AE9C;
@@ -1322,7 +1291,7 @@ div.course h2 {
 }
 
 div.course:hover {
-	background-color:#FBF4E9;
+	background-color:#F3F6FA;
 	border: #B8AE9C 1px solid;
 }
 
@@ -1330,11 +1299,11 @@ div.course:hover {
 table.data .odd img.headicon{
 	width: 2.469em;
 	height: 2.469em; 
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 }
 
 .icon{
-	-webkit-border-radius:10px;
+	/*-webkit-border-radius:10px;*/
 	border-color: white;
 	width: 2.5em;
 	height: 2.5em;
@@ -1350,7 +1319,7 @@ div.course div.shortcuts {
 fieldset#shortcuts {
 	float: right;
 	background-color: #FEFDEF;
-	border: 1pt solid #B8AE9C;
+	/*border: 1pt solid #B8AE9C;*/
 	margin: -5pt 5pt 5pt 5pt;
 	padding-right: 10pt;
 	padding-bottom: 5pt;
@@ -1363,13 +1332,13 @@ fieldset#shortcuts {
 
 fieldset {
 	margin-bottom: 10pt;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 	padding: 0 0.375em;
 	width: 90%;
 	margin: 0 auto; 
 	width:95%;
 	margin:0 auto;
-	border:thin #6D7B8D solid;
+	/*border:thin #6D7B8D solid;*/
 	margin-bottom: 1em;
 }
 #shortcuts legend {
@@ -1512,7 +1481,7 @@ ul#home-links li a img {
 }
 .my-courses-list{
 	border: solid 1px #A9ADB0;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 	padding: .375em;
 	color: #4C566C;
 	margin: .375em;
@@ -1686,9 +1655,8 @@ span.forum-paginator-active{font-weight:700;text-decoration:underline; height:2e
 	margin-bottom: 0.313em; 
 	line-height: 200%; 
 	border: solid 1px #A9ADB0;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 }
-
 li.top-tool a {  font-weight: bold; } /* ol#tools>li>a */ 
 
 li.child-tool a { 
@@ -1707,7 +1675,6 @@ ul.child-top-tool:before {
 	content: " : ";
 }
 
-/* ol#tools>li>ul>li, */ 
 li.child-tool {
 	display: inline;
 	margin-right: 0.313em;
@@ -1763,24 +1730,22 @@ dl.browse-course dd {
 
 /*  form fields grouping for WCAG 2.0 conformance*/
 
-.group_form{
-
-}
 fieldset.group_form{
-	
+	width:95%;
 	margin:0 auto;
 	margin-bottom: 1em;
-	border: 1px #6D7B8D solid;
-	-webkit-border-radius:5px;
+	/*border: 1px #6D7B8D solid;*/
+	/*-webkit-border-radius:5px;*/
 }
 
 legend.group_form{
 	background-color:white;
 	font-weight: 600;
-	color: #4c566c;
+	color: #333;
 	padding:.5em;
-	border: 1px #6D7B8D solid;
-	-webkit-border-radius:5px;
+	/*border: 1px #6D7B8D solid;*/
+	/*-webkit-border-radius:5px;*/
+	text-align:left;
 }
 /* file storage */
 
@@ -1839,8 +1804,6 @@ h2.alternatives_to{
 	margin-top: 0.75em;
 	font-size: 90%;
 	color: #A50707;
-
-/*	position: relative;*/
 }
 
 div.alternative_box{
@@ -1850,7 +1813,6 @@ div.alternative_box{
 	padding: 0.313em;
 	min-width: 9.375em;
 	background-color: #fff;
-/*	position: relative;*/
 }
 
 div.alternative_box legend {
@@ -1875,8 +1837,8 @@ label.primary a{
 
 
 fieldset#toc {
-	background-color: #FEFDEF;
-	border: 1pt solid #B8AE9C;
+	/*background-color: #B8AE9C;*/
+	/*border: 1pt solid #B8AE9C;*/
 	width:89%;
 }
 
@@ -1916,7 +1878,6 @@ div.home_box {
 	padding: 0;
 	height:9.8em;
 }
-
 
 .inside_box{
 	width:100%;
@@ -1996,11 +1957,11 @@ ul.folder{
 	padding:0em;
 }
 
-/*	Top navlist */
+
+/*	top navigation */
 
 #topnavlist-link {
-	/* Armin 26.08.2010 The color was white - now green to see BlackBerry detection working */
-	color: yellow;
+	color: white;
 	text-decoration: none;
 	font-weight: bold;
 }
@@ -2031,8 +1992,6 @@ ul#topnavlist li a  {
 }
 
 
-/*	Sub naviaation list */
-
 div.toolcontainer{
 	width:90%;
 	margin:auto;
@@ -2056,13 +2015,17 @@ ul#subnavlist li {
 ul#subnavlist li#test{
 	display: none;
 }
+ul#subnavlist li a:hover, ul#subnavlist li a:focus, ul#subnavlist li a.active{ /*
+  	color: black;
+	text-decoration:none;*/
+}
 
 ul#subnavlist li a, ul#subnavlist li a:visited {
 	color: #4C566C;
 }
 
 
-/* List attributes */
+/* list attributes */
 ul {
 	list-style: none;
 }
@@ -2070,18 +2033,20 @@ li {
 	color: black;
 	list-style: none;
 }
+
 ol#tools>li:hover, ol#tools>li:hover a {
 	border: 1px solid #e0e0e0;
 	background-color: #e6e6e6;
 	color: black; 	
 }
-#subnavigation, #subnavigation a:link, #subnavigation a:visited{
-}
 
-#contentwrapper{
-	background-color: white;
-	overflow:auto;
-	padding-bottom: 1em;
+
+#content-contentwrapper{
+	height:100%;
+    position:relative;	
+	z-index:1000;			
+	width:100%;
+	overflow:hidden;
 }
 
 #leftcolumn{
@@ -2092,9 +2057,8 @@ ol#tools>li:hover, ol#tools>li:hover a {
 }
 
 #copyright{
-	font-size: 0.5em;
+	font-size: 0.5em color:#333;
 }
-
 #gototop{
 	text-align: center;
 	color: #4B6B90;
@@ -2169,13 +2133,13 @@ div .divider {
 	font-size:.8em;
 }
 
-
 div.contentbox, input-form{
 
+	padding:.5em;
 	background-color: #ffffff;
     overflow:hidden;
-    border: #A9ADB0 solid 1px;
-	-webkit-border-radius: 5px;
+    /*border: #A9ADB0 solid 1px;
+	/*-webkit-border-radius: 5px;*/
 }
 
 div.suggestions{
@@ -2198,6 +2162,7 @@ div.social-wrapper{
 	width: 100%;
 }
 
+
 .contentbox-a{
     width: 100%;
 }
@@ -2209,4 +2174,6 @@ div.logo{
 float:left;
 clear:right;
 margin-left:2em;}
+
+
 
