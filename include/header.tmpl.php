@@ -56,11 +56,11 @@ global $system_courses, $_custom_css, $db, $_base_path, $contentManager;
 // 2. the click on link "content_link" opens the content menu
 
 
-require ('TeraWurflRemoteClient.php');
-$wurflObj = new TeraWurflRemoteClient('http://wurfl.thesedays.com/webservice.php');
+//require ('TeraWurflRemoteClient.php');
+//$wurflObj = new TeraWurflRemoteClient('http://wurfl.thesedays.com/webservice.php');
 $capabilities = array("product_info");
-$data_format = TeraWurflRemoteClient::$FORMAT_JSON;
-$wurflObj->getCapabilitiesFromAgent(null, $capabilities, $data_format);
+//$data_format = TeraWurflRemoteClient::$FORMAT_JSON;
+//$wurflObj->getCapabilitiesFromAgent(null, $capabilities, $data_format);
 
 // open/close content menu
 $this->onload .= "
@@ -133,9 +133,6 @@ setTimeout(function() { window.scrollTo(0, 1) }, 100);
 	jQuery.noConflict();
 	//-->
 	</script>
-<?php if (($wurflObj->getDeviceCapability("mobile_browser")=="Safari")): ?>	
-
-<?php endif; ?>
 	
 <?php echo $this->rtl_css; ?>
 <?php if (isset($this->course_id) && $system_courses[$this->course_id]['rss']): ?>
