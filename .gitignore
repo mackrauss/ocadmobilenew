@@ -1,0 +1,8 @@
+# Ignore Mac OS X .DS_Store
+.DS_Store
+
+# Ignore Windows Thumbs.db file
+Thumbs.db
+
+#Ignore svn folders
+.svn
