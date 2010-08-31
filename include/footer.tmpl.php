@@ -3,7 +3,7 @@
 			<div id="gototop">		
 				<br />
 				<a href="<?php echo htmlspecialchars($_SERVER['REQUEST_URI'], ENT_QUOTES); ?>#navigation-contentwrapper" title="<?php echo _AT('goto_content'); ?> Alt-c" ><?php echo _AT('goto_top'); ?>
-				<img src="<?php echo $this->base_path; ?>themes/mobile/images/arrow-up.png" alt="<?php echo _AT('goto_top'); ?> Alt-c" border="0"/> 
+				<img src="<?php echo $this->base_path . 'themes/' .$this->theme. '/images/arrow-up.png'; ?>" alt="<?php echo _AT('goto_top'); ?> Alt-c" border="0"/> 
 				
 				</a>
 			</div>  
