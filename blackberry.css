@@ -86,7 +86,8 @@ body,ul,li {
 }
 
 #site-name, h1#section-title{
-	display: inline;
+/* Armin 31.08.2010: Remove display: inline to make heading 1 show on Blackberry */
+/*	display: inline;*/
 	font-size: 90%;
 	color: #3866C4;
 }
