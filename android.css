@@ -32,13 +32,13 @@ body,ul,li {
 }
 #header-section-title {
 	text-align: center;
-	background-image: -webkit-gradient(linear, left top, left bottom,
+	/* no moz - joel background-image: -webkit-gradient(linear, left top, left bottom,
    	from(#4b6b90),
     color-stop(0.5, #6d8cb3),
     color-stop(0.50, #4b6b90),
     color-stop(0.5, #6d8cb3),
     to(#4b6b90)
-    ); 
+    ); */
 	
 	
 }
@@ -51,13 +51,13 @@ body,ul,li {
 }
 .fl-navbar a{
 	font-size: 0.969em;
-	background-image: -webkit-gradient(linear, left top, left bottom,
+	/*background-image: -webkit-gradient(linear, left top, left bottom,
    	from(#4b6b90),
     color-stop(0.5, #6d8cb3),
     color-stop(0.50, #4b6b90),
     color-stop(0.5, #6d8cb3),
     to(#4b6b90)
-    ); 
+    ); */
 }
 .fl-navbar .fl-tabs {
 	padding-top: .3em;
@@ -96,14 +96,14 @@ body,ul,li {
 /*this CSS creates a button that looks exactlty like a Mobile FSS tab.*/
 .navigation-bar-button{
     border-width:5px;
-    -webkit-border-radius: 5px;
+    /*-webkit-border-radius: 5px;*/
 	font-size: 18px;/*keep this in px*/
 	padding: 0 .3em;
 	color: white;
 	position: relative;
 	top: .69em; 
 	left: 0.188em; 
-    /* Default mobile fss color scheme for tabs not AA compliant. Here is a compliant bg image: */
+    /* Default mobile fss color scheme for tabs not AA compliant. Here is a compliant bg image: 
     background-image: -webkit-gradient(linear, left top, left bottom,
      	from(#3b5371),
         color-stop(0.5, #374e6b),
@@ -124,20 +124,20 @@ body,ul,li {
 }
 
 .fl-theme-iphone .fl-tabs li{
-    /* default mobile fss color scheme for tabs not AA compliant against a white foreground text.therefore its backgroud-image must be overrided */
+    /* default mobile fss color scheme for tabs not AA compliant against a white foreground text.therefore its backgroud-image must be overrided 
     background-image: -webkit-gradient(linear, left top, left bottom,
      	from(#3b5371),
         color-stop(0.5, #374e6b),
         color-stop(0.50, #354d68),
         to(#354d68)
-    ); 
+    ); */
 }
 
 div#content-link-container{
 	background-color:#F5F5F5;
 	padding:.375em;
 	border: #A9ADB0 solid 1px;
-	-webkit-border-radius: 2px;
+	/*-webkit-border-radius: 2px;*/
 }
 #content_link{
 	display: block;
@@ -306,7 +306,7 @@ a.dropdown-title {
 	font-weight: normal;
 	color: black;
 	text-align: center;
-	-webkit-border-radius:3px;
+	/*-webkit-border-radius:3px;*/
 	padding-top: 0.313em;
 	padding-bottom: 0.313em;
 
@@ -797,7 +797,7 @@ table.data {
 	padding: 0;
 	color: black;
 	text-align: left;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 	border: #6D7B8D 1px solid;
 
 } 
@@ -933,7 +933,7 @@ div#error {
 	background-color: #F4DCDC;
 	padding-left: 1.563em;
 	font-weight: bold;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 }
 div#error h4 {
 	color: black;
@@ -959,7 +959,7 @@ div#feedback, div#info {
 	padding-left: 0.313em;
 	padding-right: 0.313em;
 	font-family: Helvetica, Arial, sans-serif;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 	border: 1px solid #17B506;
 	background-color: #E7EFD0;
 	color: #3f4559;
@@ -1331,11 +1331,11 @@ div.course:hover {
 table.data .odd img.headicon{
 	width: 2.469em;
 	height: 2.469em; 
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 }
 
 .icon{
-	-webkit-border-radius:10px;
+	/*-webkit-border-radius:10px;*/
 	border-color: white;
 	width: 2.5em;
 	height: 2.5em;
@@ -1364,7 +1364,7 @@ fieldset#shortcuts {
 
 fieldset {
 	margin-bottom: 10pt;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 	padding: 0 0.375em;
 	width: 90%;
 	margin: 0 auto; 
@@ -1513,7 +1513,7 @@ ul#home-links li a img {
 }
 .my-courses-list{
 	border: solid 1px #A9ADB0;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 	padding: .375em;
 	color: #4C566C;
 	margin: .375em;
@@ -1687,7 +1687,7 @@ span.forum-paginator-active{font-weight:700;text-decoration:underline; height:2e
 	margin-bottom: 0.313em; 
 	line-height: 200%; 
 	border: solid 1px #A9ADB0;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 }
 
 li.top-tool a {  font-weight: bold; } /* ol#tools>li>a */ 
@@ -1772,7 +1772,7 @@ fieldset.group_form{
 	margin:0 auto;
 	margin-bottom: 1em;
 	border: 1px #6D7B8D solid;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 }
 
 legend.group_form{
@@ -1781,7 +1781,7 @@ legend.group_form{
 	color: #4c566c;
 	padding:.5em;
 	border: 1px #6D7B8D solid;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 }
 /* file storage */
 
@@ -2175,7 +2175,7 @@ div.contentbox, input-form{
 	background-color: #ffffff;
     overflow:hidden;
     border: #A9ADB0 solid 1px;
-	-webkit-border-radius: 5px;
+	/*-webkit-border-radius: 5px;*/
 }
 
 div.suggestions{

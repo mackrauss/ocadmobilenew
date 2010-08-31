@@ -27,17 +27,15 @@ body,ul,li {
 	line-height:2.813em;
 	padding:0;
 	font-size:1.063em;
+	color:#3866C4 !important;
 }
 
 #header-section-title {
-	text-align: center;
-	background-image: -webkit-gradient(linear, left top, left bottom,
-   	from(#4b6b90),
-    color-stop(0.5, #6d8cb3),
-    color-stop(0.50, #4b6b90),
-    color-stop(0.5, #6d8cb3),
-    to(#4b6b90)
-    ); 
+	text-align: left;
+	background-color:#fff; /*testing - joel*/
+	color:#3866C4 !important;
+	padding-bottom:2px;
+	font-size:18px;
 }
 
 .fl-theme-iphone .fl-navbar{
@@ -47,27 +45,28 @@ body,ul,li {
 
 .fl-navbar a{
 	font-size: 0.969em;
-	background-image: -webkit-gradient(linear, left top, left bottom,
+	/*background-image: -webkit-gradient(linear, left top, left bottom,
    	from(#4b6b90),
     color-stop(0.5, #6d8cb3),
     color-stop(0.50, #4b6b90),
     color-stop(0.5, #6d8cb3),
     to(#4b6b90)
-    ); 
+    ); */
 }
 
 .fl-navbar .fl-tabs {
 	padding-top: .3em;
 	padding-bottom: .3em;
-	border-top: 1px solid black;
-	border-bottom: .5px solid black;
-	background-color: #4b6b90; 
+	background-color: #F4F4F4; 
+		border: 1px solid #999;
+
     height: 2em;   
 }
 
 #navigation-contentwrapper{
 	position: relative;
-	background-color: #4b6b90;
+	background-color: #F4F4F4;
+	border: 1px solid #999;
 	height: 2.5em; 
 }
 
@@ -87,24 +86,24 @@ body,ul,li {
 
 #site-name, h1#section-title{
 	display: inline;
-	text-shadow: none;
 	font-size: 90%;
-	color: #4C566C;
-	color: white;
+	color: #3866C4;
 }
 
+#site-name {padding-bottom:4px;}
+
 /*this CSS creates a button that looks exactly like a Mobile FSS tab.*/
-.navigation-bar-button{
+.navigation-bar-button {
     border-width:5px;
-    -webkit-border-radius: 5px;
+   /* -webkit-border-radius: 5px;*/
 	font-size: 18px;/*keep this in px*/
 	padding: 0 .3em;
-	color: white;
+	color: #000;
 	position: relative;
 	top: .69em; 
 	left: 0.188em; 
     /* default mobile fss color scheme for tabs not AA compliant. Here is a compliant bg image: */
-    background-image: -webkit-gradient(linear, left top, left bottom,
+   /* background-image: -webkit-gradient(linear, left top, left bottom,
      	from(#3b5371),
         color-stop(0.5, #374e6b),
         color-stop(0.50, #354d68),
@@ -123,21 +122,24 @@ body,ul,li {
     );*/
 }
 
+.navigation-bar-button a {color:#000;}
+
+
 .fl-theme-iphone .fl-tabs li{
     /* default mobile fss color scheme for tabs not AA compliant against a white foreground text.therefore its backgroud-image must be overrided */
-    background-image: -webkit-gradient(linear, left top, left bottom,
+    /*background-image: -webkit-gradient(linear, left top, left bottom,
      	from(#3b5371),
         color-stop(0.5, #374e6b),
         color-stop(0.50, #354d68),
         to(#354d68)
-    ); 
+    ); */
 }
 
 div#content-link-container{
 	background-color:#F5F5F5;
 	padding:.375em;
 	border: #A9ADB0 solid 1px;
-	-webkit-border-radius: 2px;
+	/*-webkit-border-radius: 2px;*/
 }
 #content_link{
 	display: block;
@@ -175,11 +177,11 @@ p a:active {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #4C566C;
-    clear: right;
-    font: 100% Verdana, Helvetica, Arial, sans-serif;
+	color: #333;
+	clear: right;
+	font: 100% Helevetica, Arial, sans-serif;
 	font-weight: bold;
-    margin: 0;
+	margin: 0;
 	padding: 0;
 }
 
@@ -295,27 +297,30 @@ a.dropdown-title {
 
 /* main submit button */
 .button {
-	background-color: #808080;
-	font-weight: normal;
-	color: black;
+	background-color: #3866C4 !important;
+	font-weight:bold;
+	color:#fff;
 	text-align: center;
-	-webkit-border-radius:3px;
+		border:  #153877  solid 1px;
+
+	/*-webkit-border-radius:3px;*/
 	padding-top: 0.313em;
 	padding-bottom: 0.313em;
+	
+
 
 }
 .button:focus {
-	border:1px solid #A50707;
-	background-color:  #FFDAB9;	
+	
 }
 /* small submit button at top */
 .button2 {
 	font-family: Verdana, Helevetica, Arial, sans-serif;
-	background-color: #E9F4F3;
+	background-color: #3866C4;
 
 }
 .button2:focus {
-	background-color: #E9F4F3;
+	background-color: #3866C4;
 	border:  #ACCFCC  solid 1px;
 }
 
@@ -643,7 +648,8 @@ div.preference-buttons-container li{
 	margin: 0 auto;
 }
 #feedback{
-	width: 90%;
+	width: 100%;
+	padding: 2px;
 }
 #defaultfontsize-wrapper{
 	width:90%; 
@@ -737,7 +743,7 @@ div#top-links {
 #footer{
 	/*width:100%;*/
 	height:2.3em;
-	background-color: #4b6b90;
+	/*background-color: #4b6b90;*/
 	margin-top: -2.3em;
 	position: relative;
 	clear: both;
@@ -790,7 +796,7 @@ table.data {
 	padding: 0;
 	color: black;
 	text-align: left;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 	border: #6D7B8D 1px solid;
 
 } 
@@ -919,14 +925,12 @@ div#error {
 	margin-right: auto;
 	margin-top:  0.938em;
 	margin-bottom:  0.938em;
-	border: 1px solid #DD0000;
 	padding: 0.313em;
-	background-color: #F4DCDC;
 	color: #A50707;
-	background-color: #F4DCDC;
+	background-color: #FFFBD9;
 	padding-left: 1.563em;
 	font-weight: bold;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 }
 div#error h4 {
 	color: black;
@@ -952,15 +956,14 @@ div#feedback, div#info {
 	padding-left: 0.313em;
 	padding-right: 0.313em;
 	font-family: Helvetica, Arial, sans-serif;
-	-webkit-border-radius:5px;
-	border: 1px solid #17B506;
-	background-color: #E7EFD0;
-	color: #3f4559;
+	/*-webkit-border-radius:5px;*/
+	background-color: #FFFBD9;
+	color: #333;
 	font-size: 90%;
 	z-index: -1;
 }
 div#feedback li, div#info li, div#error li{
-	color: #4C566C;
+	color: #333;
 	z-index: -1;
 }
 
@@ -983,9 +986,8 @@ div#warning {
 	margin-right: auto;
 	margin-top:  0.938em;
 	margin-bottom:  0.938em;
-	border: 1px solid #FF8400;
 	padding: 0.313em;
-	background-color: #FFF6ED;
+	background-color: #FFFBD9;
 	color: #D95900;
 	font-weight: bold;
 }
@@ -1297,7 +1299,7 @@ div.course h2 {
 }
 
 div.course:hover {
-	background-color:#FBF4E9;
+	background-color:#F3F6FA;
 	border: #B8AE9C 1px solid;
 }
 
@@ -1305,11 +1307,11 @@ div.course:hover {
 table.data .odd img.headicon{
 	width: 2.469em;
 	height: 2.469em; 
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 }
 
 .icon{
-	-webkit-border-radius:10px;
+	/*-webkit-border-radius:10px;*/
 	border-color: white;
 	width: 2.5em;
 	height: 2.5em;
@@ -1325,7 +1327,7 @@ div.course div.shortcuts {
 fieldset#shortcuts {
 	float: right;
 	background-color: #FEFDEF;
-	border: 1pt solid #B8AE9C;
+	/*border: 1pt solid #B8AE9C;*/
 	margin: -5pt 5pt 5pt 5pt;
 	padding-right: 10pt;
 	padding-bottom: 5pt;
@@ -1338,13 +1340,13 @@ fieldset#shortcuts {
 
 fieldset {
 	margin-bottom: 10pt;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 	padding: 0 0.375em;
 	width: 90%;
 	margin: 0 auto; 
 	width:95%;
 	margin:0 auto;
-	border:thin #6D7B8D solid;
+	/*border:thin #6D7B8D solid;*/
 	margin-bottom: 1em;
 }
 #shortcuts legend {
@@ -1487,7 +1489,7 @@ ul#home-links li a img {
 }
 .my-courses-list{
 	border: solid 1px #A9ADB0;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 	padding: .375em;
 	color: #4C566C;
 	margin: .375em;
@@ -1661,7 +1663,7 @@ span.forum-paginator-active{font-weight:700;text-decoration:underline; height:2e
 	margin-bottom: 0.313em; 
 	line-height: 200%; 
 	border: solid 1px #A9ADB0;
-	-webkit-border-radius:5px;
+	/*-webkit-border-radius:5px;*/
 }
 li.top-tool a {  font-weight: bold; } /* ol#tools>li>a */ 
 
@@ -1740,17 +1742,18 @@ fieldset.group_form{
 	width:95%;
 	margin:0 auto;
 	margin-bottom: 1em;
-	border: 1px #6D7B8D solid;
-	-webkit-border-radius:5px;
+	/*border: 1px #6D7B8D solid;*/
+	/*-webkit-border-radius:5px;*/
 }
 
 legend.group_form{
 	background-color:white;
 	font-weight: 600;
-	color: #4c566c;
+	color: #333;
 	padding:.5em;
-	border: 1px #6D7B8D solid;
-	-webkit-border-radius:5px;
+	/*border: 1px #6D7B8D solid;*/
+	/*-webkit-border-radius:5px;*/
+	text-align:left;
 }
 /* file storage */
 
@@ -1842,8 +1845,8 @@ label.primary a{
 
 
 fieldset#toc {
-	background-color: #FEFDEF;
-	border: 1pt solid #B8AE9C;
+	/*background-color: #B8AE9C;*/
+	/*border: 1pt solid #B8AE9C;*/
 	width:89%;
 }
 
@@ -1966,18 +1969,23 @@ ul.folder{
 /*	top navigation */
 
 #topnavlist-link {
-	color: white;
+	color: #000;
 	text-decoration: none;
 	font-weight: bold;
-}
+	background-image:url(images/tree/tree_collapse.gif);
+	background-repeat:no-repeat;
+	background-position: center right;
+	padding-right:20px;}
+
 
 ul#topnavlist {
 	display: none;
 	position: relative;
 	top: 1.2em;
 	z-index: 1;
-	background-color: white;
-}
+	background-color:#fff;
+	}
+
 
 ul#topnavlist li {
 	padding: 0;
@@ -2062,10 +2070,10 @@ ol#tools>li:hover, ol#tools>li:hover a {
 }
 
 #copyright{
-	font-size: 0.5em;
+	font-size: 0.5em color:#333;
 }
 #gototop{
-	text-align: center;
+	text-align: right;
 	color: #4B6B90;
 }
 
@@ -2143,8 +2151,8 @@ div.contentbox, input-form{
 	padding:.5em;
 	background-color: #ffffff;
     overflow:hidden;
-    border: #A9ADB0 solid 1px;
-	-webkit-border-radius: 5px;
+    /*border: #A9ADB0 solid 1px;
+	/*-webkit-border-radius: 5px;*/
 }
 
 div.suggestions{
@@ -2179,6 +2187,14 @@ div.logo{
 float:left;
 clear:right;
 margin-left:2em;}
+
+
+/* Overrides for external stylesheets */
+
+.fl-tabs li a { -moz-background-clip:none;
+-moz-background-clip: none;
+-moz-background-origin: none;
+border-style:none;
 
 
 

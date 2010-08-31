@@ -27,6 +27,7 @@ body,ul,li {
 	line-height:2.813em;
 	padding:0;
 	font-size:1.063em;
+	color:#3866C4 !important;
 }
 
 #header-section-title {
@@ -34,13 +35,16 @@ body,ul,li {
 	background-color:#fff; /*testing - joel*/
 	color:#3866C4 !important;
 	padding-bottom:2px;
+	font-size:18px !important;
 }
 
-.fl-theme-iphone .fl-navbar{
+/*.fl-theme-blackberry .fl-navbar{
 	border: none;
 	border-top: none;
 }
+*/
 
+.fl-navbar {border:none !important;}
 .fl-navbar a{
 	font-size: 0.969em;
 	/*background-image: -webkit-gradient(linear, left top, left bottom,
@@ -55,9 +59,9 @@ body,ul,li {
 .fl-navbar .fl-tabs {
 	padding-top: .3em;
 	padding-bottom: .3em;
-	border-top: 1px solid black;
-	border-bottom: .5px solid black;
-	background-color: red; 
+	background-color: #F4F4F4; 
+		border: 1px solid #999;
+
     height: 2em;   
 }
 
@@ -70,7 +74,6 @@ body,ul,li {
 
 #navigation-bar{
  	height: 2.5em; 
-    border-bottom: .5px solid black;
     padding-bottom: .3em;
      
 }
@@ -91,15 +94,21 @@ body,ul,li {
 #site-name {padding-bottom:4px;}
 
 /*this CSS creates a button that looks exactly like a Mobile FSS tab.*/
-.navigation-bar-button{
-    border-width:5px;
-   /* -webkit-border-radius: 5px;*/
-	font-size: 18px;/*keep this in px*/
-	padding: 0 .3em;
+
+#topnavlist-link a:link {color:red !important;}
+
+.navigation-bar-button {
+	/* -webkit-border-radius: 5px;*/
+	font-size: 18px;
 	color: #000;
 	position: relative;
-	top: .69em; 
-	left: 0.188em; 
+	top: .69em;
+	left: 0.188em;
+	padding-right:20px;
+	color:# !important;
+	text-decoration:underline;}
+	
+
     /* default mobile fss color scheme for tabs not AA compliant. Here is a compliant bg image: */
    /* background-image: -webkit-gradient(linear, left top, left bottom,
      	from(#3b5371),
@@ -119,6 +128,9 @@ body,ul,li {
         to(#4b6b90)
     );*/
 }
+
+.navigation-bar-button a {color:#000;}
+
 
 .fl-theme-iphone .fl-tabs li{
     /* default mobile fss color scheme for tabs not AA compliant against a white foreground text.therefore its backgroud-image must be overrided */
@@ -192,8 +204,11 @@ h2.sidebox{
     font-size: 110%;
 }
 h3 {
-    font-size: 130%;
-	padding: 0;
+	font-size: 130%;
+	padding-top: 0;
+	padding-right: 0;
+	padding-bottom: 0.5em;
+	padding-left: 0;
 }
 h3.browse-courses{
 	font-size: 90%;
@@ -262,11 +277,11 @@ p.toc{
 
 /* link attributes */
 a:link, a:visited  {
-	color: #4C566C;
+	color: #5984C4;
 	text-decoration: underline;
 }
 a:hover {
-	color: #4C566C;
+	color: #5984C4;
 	text-decoration: underline;
 }
 a:active {
@@ -292,27 +307,30 @@ a.dropdown-title {
 
 /* main submit button */
 .button {
-	background-color: #808080;
-	font-weight: normal;
-	color: black;
+	background-color: #3866C4 !important;
+	font-weight:bold;
+	color:#fff;
 	text-align: center;
+		border:  #153877  solid 1px;
+
 	/*-webkit-border-radius:3px;*/
 	padding-top: 0.313em;
 	padding-bottom: 0.313em;
+	
+
 
 }
 .button:focus {
-	border:1px solid #A50707;
-	background-color:  #FFDAB9;	
+	
 }
 /* small submit button at top */
 .button2 {
 	font-family: Verdana, Helevetica, Arial, sans-serif;
-	background-color: #E9F4F3;
+	background-color: #3866C4;
 
 }
 .button2:focus {
-	background-color: #E9F4F3;
+	background-color: #3866C4;
 	border:  #ACCFCC  solid 1px;
 }
 
@@ -668,7 +686,7 @@ a#back-to {
 	clear:both;
     font-size: 0.85em;
 	padding:0 0.375em;
-	color: #4C566C;
+	color: #5984C4;
 	background-color: white;
 
 }
@@ -993,7 +1011,7 @@ div.news p {
 }
 div.news span.date {
 	font-family:Helevetica, Arial, sans-serif;
-	color: #4C566C;	
+	color: #5984C4;	
 }
 
 .news{
@@ -1173,7 +1191,7 @@ div.tabs a:hover, div.tabs a.active {
 }
 
 .headingbox a{
-	color: #4C566C;
+	color: #5984C4;
 	text-decoration:underline;
 }
 div.box {
@@ -1184,7 +1202,7 @@ h4.box {
 }
 h4.box a {
 	display: block;
-	color: #4C566C;
+	color: #5984C4;
 	background-color: #F5F5F5;
 	text-decoration: none;
 }
@@ -1483,7 +1501,7 @@ ul#home-links li a img {
 	border: solid 1px #A9ADB0;
 	/*-webkit-border-radius:5px;*/
 	padding: .375em;
-	color: #4C566C;
+	color: #5984C4;
 	margin: .375em;
 	padding: .375em;
 }
@@ -1509,7 +1527,7 @@ ul#home-links li a img {
 .fl-theme-iphone [class*="fl-list"]:not(.fl-list):not(.fl-grid) a {
 }
 .fl-theme-iphone [class*="fl-list"] > li .fl-link-summary{
-	color: #4C566C;
+	color: #5984C4;
 }
 .current_head{
 	padding-top: .5em;
@@ -1520,6 +1538,7 @@ ul#home-links li a img {
 
 .current_box{
 	max-width: 100%;
+	background-color:#F3F6FA;
 }
 .current_list{
 	width: 95%;
@@ -1831,16 +1850,55 @@ label.primary a{
 
 /* format of "table of contents" on content page */
 #toc a 		{ display:block; margin:0.188em; }
+#toc a:hover, a:focus {color:#fff; background-color:#3866C4;}
 #toc .h2, #toc .h3, #toc .h4, #toc .h5, #toc .h6{ 
 	padding:0 0 0 0;
 }
 
+#toc .h2 {font-size:80%;
+padding:0.8em 0 0 1em;}
+
+#toc .h3 {font-size:80%; font-weight:normal;
+padding:0 0 0 2em;}
+
+#toc {border: thin solid red;
+padding-bottom:-1em;
+margin-bottom:0;}
+
+div#content-text {margin-top:-0.5em;}
 
 fieldset#toc {
 	/*background-color: #B8AE9C;*/
 	/*border: 1pt solid #B8AE9C;*/
 	width:89%;
+	background-color:#E8EEF7;
 }
+
+#toc legend {
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:12pt;
+	font-weight:bold;
+	margin-top: 16pt;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+	padding-top: 2em;
+	padding-right: 0;
+	padding-bottom: 0.5em;
+	padding-left: 0;
+}
+
+#content-text blockquote {
+border-bottom:2px solid black;
+border-top:2px solid black;
+color:#000000;
+clear:both;
+font-size:1em;
+font-style:italic;
+line-height:1.4em;
+margin:0.5em 1.5em 0.5em 0;
+padding:0.1em 0 0;
+width:14em;}
 
 #side-menu{
 	overflow:hidden;
@@ -1961,33 +2019,44 @@ ul.folder{
 /*	top navigation */
 
 #topnavlist-link {
-	color: white;
+	color: #000;
 	text-decoration: none;
 	font-weight: bold;
-}
+	
+	margin-right:-20px;
+	background-image:url(images/tree/tree_collapse.gif);
+	background-repeat:no-repeat;
+	background-position: center right;
+	
+	/*border: thin solid red;*/}
+	
+	#topnavlist-link a:link {color:#5984C4;}
+
 
 ul#topnavlist {
 	display: none;
 	position: relative;
 	top: 1.2em;
 	z-index: 1;
-	background-color: white;
-}
+	background-color:#fff;
+	}
+
 
 ul#topnavlist li {
 	padding: 0;
 	margin: 0;
 }
 ul#topnavlist li a.active {
-	color: black;
+	color: #5984C4;
 	font-style: italic;
 	}
-ul#topnavlist li a:hover, ul#topnavlist li a:focus {
-	color: black;
-}
+
+#topnavlist a:hover {color:#3866c4 !important;
+text-decoration:underline !important;
+background-color:transparent;}
 
 ul#topnavlist li a  {
- 	color: #4C566C;
+ 	color: #5984C4;
  	text-decoration: none;
 }
 
@@ -2021,7 +2090,7 @@ ul#subnavlist li a:hover, ul#subnavlist li a:focus, ul#subnavlist li a.active{ /
 }
 
 ul#subnavlist li a, ul#subnavlist li a:visited {
-	color: #4C566C;
+	color: #5984C4;
 }
 
 
@@ -2060,7 +2129,7 @@ ol#tools>li:hover, ol#tools>li:hover a {
 	font-size: 0.5em color:#333;
 }
 #gototop{
-	text-align: center;
+	text-align: right;
 	color: #4B6B90;
 }
 
@@ -2176,4 +2245,12 @@ clear:right;
 margin-left:2em;}
 
 
+/* Overrides for external stylesheets */
 
+.fl-tabs li a { -moz-background-clip:none;
+-moz-background-clip: none;
+-moz-background-origin: none;
+border-style:none;}
+
+
+.recent_item {padding-bottom:1em;}
