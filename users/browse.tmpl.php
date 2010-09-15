@@ -53,22 +53,31 @@
 	<?php foreach ($this->courses_rows as $row){ ?>
 	    <?php  $counter++; ?>
 		<ul class="fl-list-menu fl-list-thumbnails">
-		 <li>
-				<h3 class="browse-courses"><a href="<?php echo url_rewrite('bounce.php?course='.$row['course_id'], true); ?>"><?php echo htmlentities($row['title'], ENT_QUOTES, 'UTF-8'); ?></a></h3>      
-		     
-		      <?php if ($row['description']): ?>
-				<span class="fl-link-summary" title="<?php echo htmlentities($row['description']);?>"><?php echo substr(nl2br(htmlentities($row['description'], ENT_QUOTES, 'UTF-8')),0,150); 
-				if(strlen($row['description']) > 150){
-				echo "...";
-				}
-				?>&nbsp;</span>
-			<?php else: ?>
-				<span class="fl-link-summary" title="<?php echo htmlentities($row['description']);?>">&nbsp;</span>
-			<?php endif; ?>
-		
-		</li>
+			<li>
+				<h3 class="browse-courses"><a href="<?php echo url_rewrite('bounce.php?course='.$row['course_id'], true); ?>"><?php echo htmlentities($row['title'], ENT_QUOTES, 'UTF-8'); ?></a></h3>
+				<!-- Add description if available -->
+				<?php if ($row['description']): ?>
+					<span class="fl-link-summary" title="<?php echo htmlentities($row['description']);?>">
+						<?php echo substr(nl2br(htmlentities($row['description'], ENT_QUOTES, 'UTF-8')),0,150); 
+							if(strlen($row['description']) > 150){
+								echo "...";
+							}
+						?>
+						&nbsp;
+					</span>
+				<?php else: ?>
+					<span class="fl-link-summary" title="<?php echo htmlentities($row['description']);?>">&nbsp;</span>
+				<?php endif; ?>
+
+				<!-- Add enrole link if allowed -->
+				<?php if (isset($row['enroll_link'])) : ?>
+					<span class="enrollme">
+						<?php echo $row['enroll_link']; ?><!--<img src="<?php echo $this->img; ?>enroll.png"/>-->
+					</span>
+				<?php endif; ?>
+			</li>
 	
-	</ul>	      
+		</ul>
 	<?php } // end foreach ?>
 <?php } // end if ?>
 </div>
