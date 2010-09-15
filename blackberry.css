@@ -1862,7 +1862,7 @@ padding:0.8em 0 0 1em;}
 #toc .h3 {font-size:80%; font-weight:normal;
 padding:0 0 0 2em;}
 
-#toc {border: thin solid red;
+#toc {border: none;
 padding-bottom:-1em;
 margin-bottom:0;}
 
